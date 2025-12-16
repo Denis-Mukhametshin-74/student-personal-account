@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Личный кабинет студента</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Расписание группы ФТ-101</h1>
+
+        <div class="menu">
+            <a href="index.html" class="menu-button">Расписание</a>
+            <a href="profile.html" class="menu-button">Профиль</a>
+            <a href="#" class="menu-button" onclick="logout()">Выйти</a>
+        </div>
+    </header>
+
+    <main>
+        <h2>Расписание на эту неделю</h2>
+        
+        <div class="day">
+            <h3>Понедельник</h3>
+            <div class="lesson">
+                <span class="time">9:00-10:30</span>
+                <span class="subject">Программирование</span>
+                <span class="room">301</span>
+                <span class="teacher">Иванов И.И.</span>
+            </div>
+            <div class="lesson">
+                <span class="time">10:45-12:15</span>
+                <span class="subject">Математика</span>
+                <span class="room">215</span>
+                <span class="teacher">Петрова А.С.</span>
+            </div>
+        </div>
+
+        <div class="day">
+            <h3>Вторник</h3>
+            <div class="lesson">
+                <span class="time">9:00-10:30</span>
+                <span class="subject">Физика</span>
+                <span class="room">101</span>
+                <span class="teacher">Сидоров В.П.</span>
+            </div>
+        </div>
+
+        <div class="day">
+            <h3>Среда</h3>
+            <div class="lesson">
+                <span class="time">9:00-12:15</span>
+                <span class="subject">Математика</span>
+                <span class="room">220</span>
+                <span class="teacher">Петрова А.С.</span>
+            </div>
+            <div class="lesson">
+                <span class="time">13:00-14:30</span>
+                <span class="subject">Английский язык</span>
+                <span class="room">410</span>
+                <span class="teacher">Козлова Е.В.</span>
+            </div>
+        </div>
+
+        <div class="day">
+            <h3>Четверг</h3>
+            <div class="lesson">
+                <span class="time">10:45-12:15</span>
+                <span class="subject">Программирование</span>
+                <span class="room">301</span>
+                <span class="teacher">Иванов И.И.</span>
+            </div>
+        </div>
+
+        <div class="day">
+            <h3>Пятница</h3>
+            <div class="lesson">
+                <span class="time">9:00-10:30</span>
+                <span class="subject">История</span>
+                <span class="room">205</span>
+                <span class="teacher">Николаев П.Д.</span>
+            </div>
+            <div class="lesson">
+                <span class="time">10:45-12:15</span>
+                <span class="subject">Физкультура</span>
+                <span class="room">102</span>
+                <span class="teacher">Смирнов А.В.</span>
+            </div>
+        </div>
+    </main>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

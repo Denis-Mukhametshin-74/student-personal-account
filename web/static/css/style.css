@@ -1,0 +1,186 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: white;
+    color: black;
+}
+
+header {
+    background-color: #0066cc;
+    color: white;
+    padding: 20px;
+}
+
+header h1 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.menu {
+    display: flex;
+    gap: 20px;
+}
+
+.menu-button {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    background-color: #0052a3;
+    border-radius: 3px;
+}
+
+.menu-button:hover {
+    background: #004080;
+}
+
+main {
+    padding: 20px;
+}
+
+main h2 {
+    color: #0066cc;
+    margin-bottom: 15px;
+}
+
+.day {
+    background: #f9f9f9;
+    margin: 15px 0px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.day h3 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.lesson {
+    display: flex;
+    gap: 15px;
+    padding: 10px;
+    border: 1px solid #eee;
+    align-items: center;
+}
+
+.lesson:hover {
+    background: #f0f8ff;
+}
+
+.time {
+    font-weight: bold;
+    color: #0066cc;
+    width: 100px;
+}
+
+.subject {
+    font-weight: bold;
+    flex: 2;
+}
+
+.room {
+    color: #666;
+    width: 60px;
+}
+
+.teacher {
+    color: #888;
+    flex: 1;
+}
+
+.profile-info {
+    background: #f9f9f9;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.profile-info p {
+    margin: 8px 0px;
+    font-size: 16px;
+}
+
+.subject-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.subject-card {
+    background: #f0f8ff;
+    padding: 15px;
+    border: 1px solid #cce0ff;
+    border-radius: 5px;
+}
+
+.subject-card p {
+    color: #555;
+}
+
+.login-form {
+    max-width: 400px;
+    margin: 30px auto;
+    align-items: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.login-button {
+    width: 100%;
+    padding: 12px;
+    background: #0052a3;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.login-button:hover {
+    background: #004080;
+}
+
+@media (max-width: 768px) {
+    main {
+        width: 100%;
+        padding: 15px;
+    }
+    
+    .menu {
+        flex-direction: column;
+    }
+    
+    .lesson {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+    
+    .time, .subject, .room, .teacher {
+        width: 100%;
+    }
+    
+    .subject-cards {
+        grid-template-columns: 1fr;
+    }
+}
