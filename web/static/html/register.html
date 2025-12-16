@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация в личном кабинете</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Регистрация в личном кабинете</h1>
+    </header>
+
+    <main>
+        <h2>Заполните данные для регистрации</h2>
+        
+        <div class="register-form">
+            <div class="form-group">
+                <label for="regName">ФИО:</label>
+                <input type="text" id="regName" autocomplete="name">
+            </div>
+            
+            <div class="form-group">
+                <label for="regEmail">Email:</label>
+                <input type="email" id="regEmail" autocomplete="email">
+            </div>
+            
+            <div class="form-group">
+                <label for="regGroup">Группа:</label>
+                <input type="text" id="regGroup">
+            </div>
+            
+            <div class="form-group">
+                <label for="regPassword">Пароль:</label>
+                <input type="password" id="regPassword" autocomplete="new-password">
+            </div>
+            
+            <div class="form-group">
+                <label for="regConfirmPassword">Подтвердите пароль:</label>
+                <input type="password" id="regConfirmPassword" autocomplete="new-password">
+            </div>
+            
+            <button type="button" onclick="register()" class="register-button">
+                <p>Зарегистрироваться</p>
+            </button>
+            
+            <div class="login-page">
+                <a href="login.html" class="login-link">Уже есть аккаунт? Войти</a>
+            </div>
+        </div>
+    </main>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

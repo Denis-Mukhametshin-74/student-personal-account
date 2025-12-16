@@ -122,7 +122,8 @@ main h2 {
     color: #555;
 }
 
-.login-form {
+.login-form,
+.register-form {
     max-width: 400px;
     margin: 30px auto;
     align-items: center;
@@ -145,7 +146,8 @@ main h2 {
     border-radius: 3px;
 }
 
-.login-button {
+.login-button,
+.register-button {
     width: 100%;
     padding: 12px;
     background: #0052a3;
@@ -156,8 +158,20 @@ main h2 {
     cursor: pointer;
 }
 
-.login-button:hover {
+.login-button:hover,
+.register-button:hover {
     background: #004080;
+}
+
+.login-page,
+.register-page {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.login-link,
+.register-link {
+    color: #0066cc;
 }
 
 @media (max-width: 768px) {
