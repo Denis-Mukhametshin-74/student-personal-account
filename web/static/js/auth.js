@@ -1,4 +1,4 @@
-async function login() {
+export async function login() {
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
     
@@ -33,7 +33,7 @@ async function login() {
     }
 }
 
-async function register() {
+export async function register() {
     const name = document.getElementById('regName').value;
     const email = document.getElementById('regEmail').value;
     const group = document.getElementById('regGroup').value;
@@ -77,7 +77,7 @@ async function register() {
     }
 }
 
-function logout() {
+export function logout() {
     localStorage.removeItem('token');
     localStorage.removeItem('user');
     window.location.href = 'login.html';

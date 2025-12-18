@@ -1,4 +1,14 @@
+import { login, register, logout } from "./auth.js";
+
 document.addEventListener('DOMContentLoaded', async function() {
+    const loginBtn = document.querySelector('.login-button');
+    const registerBtn = document.querySelector('.register-button');
+    const logoutBtn = document.querySelector('.loguot-button');
+
+    if (loginBtn) loginBtn.addEventListener('click', login);
+    if (registerBtn) registerBtn.addEventListener('click', register);
+    if (logoutBtn) logoutBtn.addEventListener('click', logout);
+
     await checkAuth();
 
     if (window.location.pathname.includes('index.html')) {
