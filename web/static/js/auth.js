@@ -1,5 +1,3 @@
-const API_BASE_URL = 'http://localhost:8080/api';
-
 async function login() {
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
@@ -10,7 +8,7 @@ async function login() {
     }
     
     try {
-        const response = await fetch(`${API_BASE_URL}/auth/login`, {
+        const response = await fetch('/api/auth/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -53,7 +51,7 @@ async function register() {
     }
     
     try {
-        const response = await fetch(`${API_BASE_URL}/auth/register`, {
+        const response = await fetch('/api/auth/register', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

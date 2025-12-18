@@ -1,5 +1,3 @@
-const API_BASE_URL = 'http://localhost:8080/api';
-
 document.addEventListener('DOMContentLoaded', async function() {
     await checkAuth();
 
@@ -30,7 +28,7 @@ async function checkAuth() {
 async function loadSchedule() {
     try {
         const token = localStorage.getItem('token');
-        const response = await fetch(`${API_BASE_URL}/schedule`, {
+        const response = await fetch('/api/schedule', {
             headers: {
                 'Authorization': `Bearer ${token}`
             }
@@ -50,7 +48,7 @@ async function loadSchedule() {
 async function loadProfile() {
     try {
         const token = localStorage.getItem('token');
-        const response = await fetch(`${API_BASE_URL}/profile`, {
+        const response = await fetch('/api/profile', {
             headers: {
                 'Authorization': `Bearer ${token}`
             }
@@ -70,7 +68,7 @@ async function loadProfile() {
 async function loadSubjects() {
     try {
         const token = localStorage.getItem('token');
-        const response = await fetch(`${API_BASE_URL}/subjects`, {
+        const response = await fetch('/api/subjects', {
             headers: {
                 'Authorization': `Bearer ${token}`
             }
