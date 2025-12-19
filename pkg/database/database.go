@@ -17,7 +17,8 @@ type Config struct {
 	Port     string
 	User     string
 	Password string
-	Name     string
+	DBName   string
+	SSLMode  string
 }
 
 func InitDB(cfg Config) error {
@@ -29,6 +30,10 @@ func InitDB(cfg Config) error {
 		cfg.Port = "5432"
 	}
 
+	if cfg.SSLMode == "" {
+		cfg.SSLMode = "disable"
+	}
+
 	if cfg.User == "" {
 		return errors.New("DB_USER is required")
 	}
@@ -37,13 +42,13 @@ func InitDB(cfg Config) error {
 		return errors.New("DB_PASSWORD is required")
 	}
 
-	if cfg.Name == "" {
+	if cfg.DBName == "" {
 		return errors.New("DB_NAME is required")
 	}
 
 	connStr := fmt.Sprintf(
-		"host=%s port=%s user=%s password=%s name=%s",
-		cfg.Host, cfg.Port, cfg.User, cfg.Password, cfg.Name,
+		"host=%s port=%s user=%s password=%s dbname=%s sslmode=%s",
+		cfg.Host, cfg.Port, cfg.User, cfg.Password, cfg.DBName, cfg.SSLMode,
 	)
 
 	var err error
