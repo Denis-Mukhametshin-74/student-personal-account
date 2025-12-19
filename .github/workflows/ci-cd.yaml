@@ -1,0 +1,75 @@
+name: CI/CD
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  test-and-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Go
+        uses: actions/setup-go@v4
+        with:
+          go-version: "1.21"
+          
+      - name: Build and test
+        run: |
+          go mod download
+          go build ./...
+          go test ./pkg/jwt ./pkg/cache ./internal/app/dto
+          go vet ./...
+          
+      - name: Check formatting
+        run: |
+          if [ -n "$(gofmt -l .)" ]; then
+            echo "Найден неотформатированный код"
+            exit 1
+          fi
+
+  deploy-demo:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: test-and-build
+    
+    permissions:
+      pages: write
+      id-token: write
+      
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+      
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+      
+      - name: Copy demo files
+        run: |
+          if [ -d "./demo" ]; then
+            mkdir -p ./_site
+            cp -r ./demo/* ./_site/
+            
+            if [ ! -f "./_site/index.html" ] && [ -f "./_site/schedule.html" ]; then
+              cp ./_site/schedule.html ./_site/index.html
+            fi
+            
+            echo "Демо файлов: $(find ./_site -type f | wc -l)"
+          else
+            echo "Папка demo не найдена"
+          fi
+          
+      - name: Upload to Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './_site'
+          
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4
