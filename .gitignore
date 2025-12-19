@@ -1,0 +1,15 @@
+# Binaries for programs and plugins
+*.exe
+
+# Test binary
+*.test
+
+# Go workspace file
+go.work
+go.work.sum
+
+# env file
+.env
+
+# VS Code
+.vscode/
