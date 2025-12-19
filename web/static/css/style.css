@@ -176,6 +176,49 @@ main h2 {
     color: #0066cc;
 }
 
+.oauth-buttons {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.oauth-text {
+    margin-bottom: 10px;
+    color: #666;
+}
+
+.oauth-button {
+    background: white;
+    border: 1px solid #ddd;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 300px;
+    transition: all 0.2s ease;
+    font-size: 16px;
+}
+
+.oauth-button:hover {
+    background: #f8f8f8;
+    border-color: #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.oauth-button:active {
+    background: #f0f0f0;
+    transform: translateY(1px);
+}
+
+.oauth-button img {
+    width: 20px;
+    height: 20px;
+}
+
 @media (max-width: 768px) {
     main {
         width: 100%;
@@ -201,5 +244,10 @@ main h2 {
     
     .subject-cards {
         grid-template-columns: 1fr;
+    }
+
+    .oauth-button {
+        max-width: 100%;
+        padding: 12px 15px;
     }
 }
