@@ -1,0 +1,56 @@
+name: student-portal
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Go
+      uses: actions/setup-go@v4
+      with:
+        go-version: '1.21'
+
+    - name: Install dependencies
+      run: go mod download
+
+    - name: Create .env file
+      run: |
+        cat > .env << EOF
+        DB_HOST=localhost
+        DB_PORT=5432
+        DB_USER=postgres
+        DB_PASSWORD=postgres
+        DB_NAME=student_portal_test
+        DB_SSL_MODE=disable
+        JWT_SECRET=test_secret_key
+        JWT_EXPIRATION=24h
+        PORT=8080
+        EOF
+
+    - name: Build
+      run: go build -v ./...
+
+    - name: Test (без БД)
+      run: |
+        # Тесты, которые не требуют БД
+        go test -v ./pkg/jwt
+        go test -v ./pkg/cache
+        go test -v ./internal/app/dto
+        
+    - name: Run vet
+      run: go vet ./...
+
+    - name: Run fmt check
+      run: |
+        if [ "$(gofmt -l .)" != "" ]; then
+          echo "Code is not formatted. Run 'gofmt -w .'"
+          exit 1
+        fi
