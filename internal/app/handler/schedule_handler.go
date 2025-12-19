@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"net/http"
 
-	"student-personal-account/internal/app/service"
+	"student-portal/internal/app/service"
 )
 
 type ScheduleHandler struct {

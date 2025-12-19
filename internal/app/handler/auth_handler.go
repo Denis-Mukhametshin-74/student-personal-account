@@ -3,8 +3,8 @@ package handler
 import (
 	"encoding/json"
 	"net/http"
-	"student-personal-account/internal/app/dto"
-	"student-personal-account/internal/app/service"
+	"student-portal/internal/app/dto"
+	"student-portal/internal/app/service"
 )
 
 type AuthHandler struct {

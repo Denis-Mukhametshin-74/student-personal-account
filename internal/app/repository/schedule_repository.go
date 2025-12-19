@@ -3,7 +3,7 @@ package repository
 import (
 	"database/sql"
 	"fmt"
-	"student-personal-account/internal/app/model"
+	"student-portal/internal/app/model"
 )
 
 type ScheduleRepository struct {

@@ -2,8 +2,8 @@ package service
 
 import (
 	"errors"
-	"student-personal-account/internal/app/dto"
-	"student-personal-account/internal/app/repository"
+	"student-portal/internal/app/dto"
+	"student-portal/internal/app/repository"
 )
 
 type ProfileService struct {

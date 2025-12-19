@@ -1,4 +1,4 @@
-module student-personal-account
+module student-portal
 
 go 1.25.1
 

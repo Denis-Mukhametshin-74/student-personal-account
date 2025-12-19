@@ -4,7 +4,7 @@ import (
 	"context"
 	"net/http"
 	"strings"
-	"student-personal-account/pkg/jwt"
+	"student-portal/pkg/jwt"
 )
 
 type contextKey string

@@ -2,10 +2,10 @@ package service
 
 import (
 	"errors"
-	"student-personal-account/internal/app/dto"
-	"student-personal-account/internal/app/model"
-	"student-personal-account/internal/app/repository"
-	"student-personal-account/pkg/jwt"
+	"student-portal/internal/app/dto"
+	"student-portal/internal/app/model"
+	"student-portal/internal/app/repository"
+	"student-portal/pkg/jwt"
 
 	"golang.org/x/crypto/bcrypt"
 )

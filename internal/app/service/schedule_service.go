@@ -3,8 +3,8 @@ package service
 import (
 	"errors"
 	"fmt"
-	"student-personal-account/internal/app/dto"
-	"student-personal-account/internal/app/repository"
+	"student-portal/internal/app/dto"
+	"student-portal/internal/app/repository"
 )
 
 type ScheduleService struct {
